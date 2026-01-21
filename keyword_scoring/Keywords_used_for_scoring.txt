@@ -1,0 +1,123 @@
+KEYWORDS USED FOR SCORING
+================================================================================
+
+Based on analysis of 250 randomly sampled abstracts
+
+
+METHODS (weight: 5 points)
+----------------------------------------
+1. delineat
+2. management zone
+3. zone delineation
+4. cluster
+5. k-means
+6. fuzzy c-means
+7. hierarchical cluster
+8. classification
+9. supervised
+10. unsupervised
+11. machine learning
+12. random forest
+13. neural network
+14. deep learning
+15. geostatistic
+16. kriging
+17. variogram
+18. principal component
+19. pca
+20. segment
+21. partition
+22. stratif
+23. algorithm
+24. optimization
+
+DATA (weight: 4 points)
+----------------------------------------
+1. yield map
+2. yield data
+3. yield variability
+4. soil
+5. soil property
+6. soil variability
+7. electrical conductivity
+8. ec map
+9. apparent ec
+10. remote sensing
+11. satellite
+12. sentinel
+13. landsat
+14. ndvi
+15. vegetation index
+16. multispectral
+17. uav
+18. drone
+19. unmanned aerial
+20. field study
+21. field experiment
+22. case study
+23. spatial variability
+24. within-field variability
+
+APPLICATION (weight: 3 points)
+----------------------------------------
+1. precision agriculture
+2. precision farming
+3. site-specific
+4. site specific management
+5. variable rate
+6. vra
+7. vrt
+8. variable rate application
+9. smart agriculture
+10. smart farming
+
+RESULTS (weight: 3 points)
+----------------------------------------
+1. validation
+2. validate
+3. accuracy
+4. performance
+5. comparison
+6. compar
+7. evaluat
+8. assess
+9. r2
+10. rmse
+11. correlation
+12. coefficient
+13. improvement
+14. optim
+15. efficiency
+
+CONTEXT (weight: 1 points)
+----------------------------------------
+1. crop
+2. field
+3. farm
+4. agricultural
+5. sensor
+6. mapping
+7. spatial
+
+EXCLUSION (weight: -5 points)
+----------------------------------------
+1. adoption study
+2. farmer adoption
+3. technology adoption
+4. economic analysis
+5. cost-benefit
+6. willingness to pay
+7. survey
+8. questionnaire
+9. interview
+10. iot only
+11. internet of things
+12. sensor network
+13. blockchain
+14. policy
+15. regulation
+16. social
+17. perception
+18. attitude
+
+BONUS: Complete study (methods + data + results): +5 points

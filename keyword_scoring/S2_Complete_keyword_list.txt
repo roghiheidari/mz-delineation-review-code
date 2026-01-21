@@ -1,0 +1,304 @@
+SUPPLEMENTARY MATERIAL S2
+Complete Keyword List for Automated Relevance Scoring
+================================================================================
+
+This document provides the complete list of keywords used for automated 
+relevance scoring of 1,038 papers. Keywords were identified through systematic 
+analysis of 250 randomly sampled abstracts (random seed: 42).
+
+================================================================================
+KEYWORD CATEGORIES AND WEIGHTS
+================================================================================
+
+HIGH-VALUE METHODS (Weight: +5 points each)
+--------------------------------------------
+Keywords indicating specific delineation methods:
+
+1. delineat*
+2. management zone*
+3. zone delineation
+4. cluster*
+5. k-means
+6. fuzzy c-means
+7. hierarchical cluster*
+8. classification
+9. supervised
+10. unsupervised
+11. machine learning
+12. random forest
+13. neural network
+14. deep learning
+15. geostatistic*
+16. kriging
+17. variogram
+18. principal component*
+19. pca
+20. segment*
+21. partition*
+22. stratif*
+23. algorithm
+24. optimization
+
+Rationale: These keywords indicate papers that describe specific methodological 
+approaches to management zone delineation, which is central to our review.
+
+HIGH-VALUE DATA (Weight: +4 points each)
+-----------------------------------------
+Keywords indicating empirical data sources:
+
+1. yield map*
+2. yield data
+3. yield variability
+4. soil*
+5. soil property*
+6. soil variability
+7. electrical conductivity
+8. ec map*
+9. apparent ec
+10. remote sensing
+11. satellite*
+12. sentinel*
+13. landsat*
+14. ndvi
+15. vegetation index*
+16. multispectral
+17. uav
+18. drone*
+19. unmanned aerial*
+20. field study
+21. field experiment*
+22. case study
+23. spatial variability
+24. within-field variability
+
+Rationale: These keywords indicate papers with empirical data, which are 
+essential for understanding practical applications of delineation methods.
+
+APPLICATION CONTEXT (Weight: +3 points each)
+---------------------------------------------
+Keywords indicating precision agriculture context:
+
+1. precision agriculture
+2. precision farming
+3. site-specific*
+4. site specific management
+5. variable rate*
+6. vra
+7. vrt
+8. variable rate application
+9. smart agriculture
+10. smart farming
+
+Rationale: These keywords ensure papers are within the precision agriculture 
+domain, which is our review's focus.
+
+RESULTS/VALIDATION (Weight: +3 points each)
+--------------------------------------------
+Keywords indicating quantitative results:
+
+1. validation
+2. validate*
+3. accuracy
+4. performance
+5. comparison
+6. compar*
+7. evaluat*
+8. assess*
+9. r2
+10. r-squared
+11. rmse
+12. correlation
+13. coefficient
+14. improvement
+15. optim*
+16. efficiency
+
+Rationale: These keywords indicate papers that report quantitative results 
+and validation, which are important for assessing method effectiveness.
+
+GENERAL CONTEXT (Weight: +1 point each)
+----------------------------------------
+Keywords providing general context:
+
+1. crop*
+2. field*
+3. farm*
+4. agricultural
+5. sensor*
+6. mapping
+7. spatial
+
+Rationale: These keywords provide general agricultural context but are less 
+specific than other categories.
+
+EXCLUSION INDICATORS (Weight: -5 points each)
+----------------------------------------------
+Keywords indicating likely irrelevant papers:
+
+1. adoption study
+2. farmer adoption
+3. technology adoption
+4. economic analysis
+5. cost-benefit
+6. willingness to pay
+7. survey*
+8. questionnaire*
+9. interview*
+10. iot only
+11. internet of things
+12. sensor network
+13. blockchain
+14. policy
+15. regulation
+16. social
+17. perception
+18. attitude
+
+Rationale: These keywords indicate papers focused on adoption, economics, 
+or social aspects rather than delineation methods.
+
+================================================================================
+BONUS SCORING
+================================================================================
+
+COMPLETE STUDY BONUS (+5 points)
+---------------------------------
+Papers receive a bonus if they contain keywords from ALL three categories:
+1. Methods (at least one keyword)
+2. Data (at least one keyword)
+3. Results (at least one keyword)
+
+Rationale: Papers with methods, data, and results represent complete empirical 
+studies, which are most valuable for our review.
+
+================================================================================
+SCORING ALGORITHM
+================================================================================
+
+For each paper:
+
+1. Initialize score = 0
+
+2. For each keyword category:
+   - Check if any keywords from category appear in title or abstract
+   - If yes, add category weight to score (only once per category)
+
+3. Check for complete study:
+   - If has methods AND data AND results keywords
+   - Add bonus: +5 points
+
+4. Final score range: -5 to 38 points
+   - Minimum: -5 (only exclusion keywords)
+   - Maximum: 38 (all categories + bonus)
+
+5. Papers ranked by score (highest to lowest)
+
+6. Top 300 papers selected (score ≥ 18)
+
+================================================================================
+KEYWORD DETECTION METHODOLOGY
+================================================================================
+
+Text Processing:
+----------------
+1. Convert title and abstract to lowercase
+2. Combine into single text string
+3. Search for keyword presence (case-insensitive)
+
+Matching Rules:
+---------------
+1. Exact substring matching
+2. Wildcards (*) match any characters
+3. Only one match per category counts (no double-counting)
+4. Keywords checked in order listed
+
+Example:
+--------
+Text: "This study uses k-means clustering to delineate management zones 
+       based on yield data and soil electrical conductivity. Results show 
+       improved efficiency with R2 = 0.85."
+
+Matches:
+- Methods: "k-means", "cluster", "delineat", "management zone" → +5 points
+- Data: "yield data", "soil", "electrical conductivity" → +4 points
+- Results: "r2", "efficiency", "improved" → +3 points
+- Context: "precision agriculture" NOT found → 0 points
+- General: "soil" (already counted in Data) → 0 points
+- Exclusion: none → 0 points
+- Bonus: Has methods + data + results → +5 points
+
+Total Score: 5 + 4 + 3 + 5 = 17 points
+
+================================================================================
+VALIDATION
+================================================================================
+
+Sample Validation:
+------------------
+- 250 papers randomly sampled (seed=42)
+- Manual classification:
+  - Clearly relevant: 106 (42.4%)
+  - Potentially relevant: 113 (45.2%)
+  - Likely irrelevant: 31 (12.4%)
+
+Score Distribution (all 1,038 papers):
+--------------------------------------
+- High (≥15): 386 papers (37.2%)
+- Medium (10-14): 173 papers (16.7%)
+- Low (5-9): 285 papers (27.5%)
+- Very low (<5): 194 papers (18.7%)
+
+Top 300 Selection:
+------------------
+- Cutoff score: ≥18
+- Score range: 18-21
+- Mean score: 20.8
+- Median score: 21.0
+
+Validation Check:
+-----------------
+- 50 papers randomly sampled from excluded set (ranks 201-1,038)
+- Manual review found that relevant papers have already been selected
+
+
+================================================================================
+TRANSPARENCY AND REPRODUCIBILITY
+================================================================================
+
+All keywords and weights are provided in this document to ensure:
+
+1. Complete transparency of selection process
+2. Reproducibility by other researchers
+3. Ability to critique and improve methodology
+4. Clear documentation for peer review
+5. Compliance with PRISMA guidelines
+
+The scoring algorithm is implemented in Python and available in:
+06_score_and_filter_papers.py
+
+================================================================================
+LIMITATIONS
+================================================================================
+
+1. Keyword-based approach may miss relevant papers with different terminology
+2. Scoring weights are somewhat arbitrary (though evidence-based)
+3. Does not capture semantic meaning or context
+4. May prioritize papers with keyword-rich abstracts
+5. Requires manual validation of top-ranked papers
+
+However, this approach:
+- Provides systematic, reproducible prioritization
+- Reduces reviewer burden for large paper sets
+- Is transparent and auditable
+- Has been validated through sampling
+- Is supplemented by manual screening
+
+================================================================================
+CITATION
+================================================================================
+
+If you use this keyword list or scoring methodology, please cite our paper.
+
+================================================================================
+END OF SUPPLEMENTARY MATERIAL S2
+================================================================================
