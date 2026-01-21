@@ -1,9 +1,9 @@
-#Management Zone Delineation Review – Code & Pipelines
+# Management Zone Delineation Review – Code & Pipelines
 This repository contains the code and prompt templates referenced in the paper:
 - Evidence-based keyword scoring for Q1 abstracts.
 - AI-assisted screening prompts and full-text screening.
 - Scripts to prefill the data extraction / review table.
-##1. Keyword scoring (Q1 abstracts)
+## 1. Keyword scoring (Q1 abstracts)
 Folder: `keyword_scoring/`
 - [06_score_and_filter_papers.py]  
   Python implementation of the evidence-based keyword scoring described in the paper:
@@ -14,7 +14,7 @@ Folder: `keyword_scoring/`
   Main keyword groups and weights.
 - [S2_Complete_keyword_list.txt]  
   Complete keyword list and detailed description of the scoring algorithm.
-##2. AI-assisted screening
+## 2. AI-assisted screening
 Folder: `ai_screening/`
 - [01_AI_SCREENING_PROMPTS.txt](cci:7://file:///d:/MZ/New/FINAL/GIT/ai_screening/01_AI_SCREENING_PROMPTS.txt:0:0-0:0)  
   Canonical prompts used for AI-assisted title/abstract screening.  
@@ -25,7 +25,7 @@ Folder: `ai_screening/`
   - Writes `FULLTEXT_AI_SCREENING.csv` (not included here) for human review.
 > Note: this script expects a `config.PipelineConfig` class (not included here) that provides
 > `paths.output_root` and optional `screening.fulltext_criteria` / `ollama_model`.
-##3. Extraction pipeline / review table
+## 3. Extraction pipeline / review table
 Folder: `extraction_pipeline/`
 - [prefill_full_review_table.py]  
   Prefills a review/extraction table (e.g. `FULL_REVIEW_154_TEMPLATE.csv`, not included here)
