@@ -1,5 +1,7 @@
 # Management Zone Delineation Review – Code & Pipelines
  
+Associated manuscript: *The Evolution of Data-Driven Management Zone Delineation: A Systematic Review*
+ 
 This repository contains the prompt templates and analysis scripts referenced in the review paper on within-field management zone delineation in precision agriculture.
  
 The goal is to support transparency and reproducibility of the review workflow. To avoid copyright and licensing issues, the repository does **not** include publisher PDFs, full-text content, or proprietary database exports.
