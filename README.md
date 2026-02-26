@@ -86,5 +86,8 @@ Folder: `extraction_pipeline/`
  
 - `prefill_full_review_table.py`
   - Prefills an extraction/review table template (CSV) by joining intermediate screening metadata files.
+
+- `xml_extraction_rules_prompt.md`
+  - Rules and structured XML output format used for study-level extraction.
  
 Note: This script is intentionally "project glue code" and expects intermediate CSVs produced during the review workflow. The input/output files are not included in this repository.
