@@ -8,7 +8,10 @@ import csv
 import json
 import subprocess
 
-from .config import PipelineConfig
+try:
+    from .config import PipelineConfig
+except ImportError:  # pragma: no cover
+    from config import PipelineConfig
 
 
 @dataclass
@@ -188,3 +191,7 @@ def run_fulltext_screening(cfg: PipelineConfig) -> None:
             writer.writerow([r.paper_id, r.decision, r.confidence, r.reason, r.model])
 
     print(f"Full-text AI screening results written to: {out_csv}")
+
+
+if __name__ == "__main__":
+    run_fulltext_screening(PipelineConfig())
