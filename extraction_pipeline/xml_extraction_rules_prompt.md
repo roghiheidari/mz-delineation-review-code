@@ -4,9 +4,7 @@ This document contains the rules and response format used to extract structured,
 
 ## Task
 
-You are analyzing research papers for a systematic review titled:
-
-"The Evolution of Data-Driven Management Zone Delineation: A Systematic Review"
+You are assisting in analyzing research papers for a systematic review.
 
 Your job is to determine whether each paper is relevant, and if it is, produce a strictly formatted XML summary using short, keyword-style entries (not descriptive sentences).
 
