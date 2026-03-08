@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MZ Delineation Review DB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.bootstrap5.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-fluid py-3">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
+        <div>
+          <h1 class="h4 m-0">Management Zone Delineation – Review Database</h1>
+          <div class="text-muted small">Interactive table for filtering and searching extracted study-level variables.</div>
+        </div>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-secondary btn-sm" href="data/papers.csv" target="_blank" rel="noopener">Download CSV</a>
+          <a class="btn btn-outline-secondary btn-sm" href="data/papers.json" target="_blank" rel="noopener">Download JSON</a>
+        </div>
+      </div>
+
+      <hr class="my-3" />
+
+      <div class="alert alert-light border small" id="meta">
+        <div><strong>Tip:</strong> Use the panes on the left to filter (e.g., workflows, crops, country, year). Use the global search box for keyword queries.</div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="papers" class="table table-striped table-hover table-sm align-middle" style="width: 100%"></table>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/dataTables.searchPanes.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/searchPanes.bootstrap5.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
