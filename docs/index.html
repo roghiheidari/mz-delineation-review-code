@@ -6,8 +6,9 @@
     <title>MZ Delineation Review DB</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.dataTables.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.3.3/css/searchPanes.bootstrap5.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/2.0.5/css/select.bootstrap5.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -26,7 +27,42 @@
       <hr class="my-3" />
 
       <div class="alert alert-light border small" id="meta">
-        <div><strong>Tip:</strong> Use the panes on the left to filter (e.g., workflows, crops, country, year). Use the global search box for keyword queries.</div>
+        <div><strong>Tip:</strong> Use the filter dropdowns below (Year/Country/Crops/Workflow group/VI media/Validation tier). Use the table search box for keyword queries.</div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body py-2">
+          <div class="row g-2 align-items-end">
+            <div class="col-12 col-md-2">
+              <label class="form-label small mb-1" for="f-year">Year</label>
+              <select id="f-year" class="form-select form-select-sm" multiple></select>
+            </div>
+            <div class="col-12 col-md-2">
+              <label class="form-label small mb-1" for="f-country">Country</label>
+              <select id="f-country" class="form-select form-select-sm" multiple></select>
+            </div>
+            <div class="col-12 col-md-2">
+              <label class="form-label small mb-1" for="f-crops">Crops</label>
+              <select id="f-crops" class="form-select form-select-sm" multiple></select>
+            </div>
+            <div class="col-12 col-md-2">
+              <label class="form-label small mb-1" for="f-dataused">Data used for MZ</label>
+              <select id="f-dataused" class="form-select form-select-sm" multiple></select>
+            </div>
+            <div class="col-12 col-md-2">
+              <label class="form-label small mb-1" for="f-workflows">Workflow group</label>
+              <select id="f-workflows" class="form-select form-select-sm" multiple></select>
+            </div>
+            <div class="col-12 col-md-2">
+              <label class="form-label small mb-1" for="f-validation">Validation tier</label>
+              <select id="f-validation" class="form-select form-select-sm" multiple></select>
+            </div>
+          </div>
+          <div class="d-flex gap-2 mt-2">
+            <button id="clear-filters" class="btn btn-outline-secondary btn-sm" type="button">Clear filters</button>
+            <div class="text-muted small" id="result-count"></div>
+          </div>
+        </div>
       </div>
 
       <div class="table-responsive">
@@ -34,12 +70,27 @@
       </div>
     </div>
 
+    <div class="modal fade" id="cellModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cellModalTitle">Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <pre class="m-0" id="cellModalBody" style="white-space: pre-wrap"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/dataTables.searchPanes.min.js"></script>
-    <script src="https://cdn.datatables.net/searchpanes/2.3.3/js/searchPanes.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/select/2.0.5/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/select/2.0.5/js/select.bootstrap5.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
