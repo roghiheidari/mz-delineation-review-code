@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 from typing import Any, Dict
 
@@ -30,6 +31,114 @@ def _abstract_snippet(raw: Any, limit: int = 300) -> str:
     if not s:
         return ""
     return s[:limit]
+
+
+def _norm_country(raw: Any) -> str:
+    if raw is None:
+        return ""
+    s = str(raw).strip()
+    if not s:
+        return ""
+    # Examples:
+    # - "USA (Southern High Plains of Texas, near Olton, ..." -> "USA"
+    # - "United States" -> "United States"
+    s = s.split("(", 1)[0]
+    s = s.split(",", 1)[0]
+    return s.strip()
+
+
+def _split_tokens(raw: Any) -> list[str]:
+    if raw is None:
+        return []
+    s = str(raw).strip()
+    if not s:
+        return []
+    parts = re.split(r"[;,]+", s)
+    out: list[str] = []
+    for p in parts:
+        t = p.strip()
+        if not t:
+            continue
+        out.append(t)
+    return out
+
+
+def _norm_crop(token: str) -> str:
+    # "Corn (Zea mays L.)" -> "Corn"
+    t = token.split("(", 1)[0].strip()
+    if not t:
+        return ""
+
+    # Guard against broken fragments like "Corymbia citriodora)" that can appear
+    # when the source text contains nested parentheses.
+    if ")" in t and "(" not in token:
+        return ""
+
+    t = re.sub(r"\s+", " ", t).strip()
+
+    # Drop non-crop tokens that appear in some rows
+    tl = t.lower()
+    if tl.startswith("plot"):
+        return ""
+    if tl in {"plots", "plot", "plot a", "plot b", "plot c", "plot d"}:
+        return ""
+
+    # Normalize capitalization and common variants
+    crop_map = {
+        "corn": "Corn",
+        "maize": "Corn",
+        "soybean": "Soybean",
+        "soybeans": "Soybean",
+        "cotton": "Cotton",
+        "wheat": "Wheat",
+        "durum wheat": "Wheat",
+        "sorghum": "Sorghum",
+        "barley": "Barley",
+        "rice": "Rice",
+        "alfalfa": "Alfalfa",
+        "cover crops": "Cover crops",
+        "corn silage": "Corn silage",
+    }
+
+    if tl in crop_map:
+        return crop_map[tl]
+
+    # Default: sentence-style capitalization (avoids Cotton vs cotton)
+    return t[:1].upper() + t[1:].lower()
+
+
+def _extract_workflow_groups(raw: Any) -> list[str]:
+    if raw is None:
+        return []
+    s = str(raw)
+    if not s.strip():
+        return []
+    # Workflow groups are coded like A1..A5, B1..B5, C1..C5, D1..D5
+    codes = re.findall(r"\b[A-D][1-5]\b", s.upper())
+    # Distinct while preserving order
+    seen: set[str] = set()
+    out: list[str] = []
+    for c in codes:
+        if c not in seen:
+            seen.add(c)
+            out.append(c)
+    return out
+
+
+def _extract_validation_tiers(raw: Any) -> list[str]:
+    if raw is None:
+        return []
+    s = str(raw)
+    if not s.strip():
+        return []
+    tiers = re.findall(r"\bVAL_TIER_[A-Z]\b", s.upper())
+    seen: set[str] = set()
+    out: list[str] = []
+    for t in tiers:
+        if t not in seen:
+            seen.add(t)
+            out.append(t)
+    return out
 
 
 def build_integrated_db(source_dir: Path, out_dir: Path) -> Path:
@@ -89,6 +198,41 @@ def build_integrated_db(source_dir: Path, out_dir: Path) -> Path:
     # Merge into one table (left join on AllPapers)
     df = allpapers.copy()
 
+    # Keep a compact, reviewer-friendly copy of the "first-round" raw extraction
+    raw_cols = [
+        "Paper_ID",
+        "BibTeX_ID",
+        "Title",
+        "Year",
+        "Journal",
+        "Country",
+        "FieldSize",
+        "Data used for MZ",
+        "Auxilary data",
+        "Data used for validation",
+        "Sensors/DataSources names",
+        "SamplingDensity",
+        "Resolution",
+        "Methods",
+        "Sub-Methods-Internal",
+        "Zones",
+        "ManagementFocus",
+        "Crops",
+        "Validation",
+        "Notes",
+    ]
+    raw_cols = [c for c in raw_cols if c in df.columns]
+    raw_map: dict[int, dict[str, Any]] = {}
+    for _, r in df[raw_cols].iterrows():
+        pid = r.get("Paper_ID")
+        if pd.isna(pid):
+            continue
+        try:
+            pid_int = int(pid)
+        except Exception:
+            continue
+        raw_map[pid_int] = {k: r.get(k) for k in raw_cols if k != "Paper_ID"}
+
     # Pull in DOI/score/keywords from Top_300_papers_selected
     top300_cols = [c for c in ["Paper_ID", "Score", "DOI", "Keywords Found"] if c in top300.columns]
     df = df.merge(top300[top300_cols], on="Paper_ID", how="left", suffixes=("", "_top300"))
@@ -145,6 +289,24 @@ def build_integrated_db(source_dir: Path, out_dir: Path) -> Path:
     if "Paper_ID" in dataflags.columns:
         df = df.merge(dataflags, on="Paper_ID", how="left", suffixes=("", "_dataflags"))
 
+        # Derived: list of data categories used for MZ delineation
+        flag_cols = [c for c in dataflags.columns if c not in ("Paper_ID", "BibTeX_ID")]
+        if flag_cols:
+            def _collect_data_used(row: pd.Series) -> str:
+                used: list[str] = []
+                for c in flag_cols:
+                    v = row.get(c)
+                    try:
+                        vv = float(v)
+                    except Exception:
+                        continue
+                    if vv == 1:
+                        used.append(str(c).strip())
+                return "; ".join(used)
+
+            df["DataUsed_MZ"] = df.apply(_collect_data_used, axis=1)
+            df["DataUsed_MZ_list"] = df["DataUsed_MZ"].map(_split_tokens)
+
     # Field size + VI info
     f_cols = [
         "Paper_ID",
@@ -173,6 +335,14 @@ def build_integrated_db(source_dir: Path, out_dir: Path) -> Path:
     v_cols = [c for c in v_cols if c in validation.columns]
     df = df.merge(validation[v_cols], on="Paper_ID", how="left", suffixes=("", "_validation"))
 
+    # Prefer method explanation text for the Methods column displayed in the UI
+    if "Explanations (for each workflows) " in df.columns:
+        df["Methods_Explanation"] = df["Explanations (for each workflows) "]
+
+    # Make an Abstract column available for UI (public-safe snippet)
+    if "Abstract_Snippet" in df.columns and "Abstract" not in df.columns:
+        df["Abstract"] = df["Abstract_Snippet"]
+
     # Derived DOI URL
     if "DOI" in df.columns:
         df["DOI"] = df["DOI"].map(_norm_doi)
@@ -180,8 +350,49 @@ def build_integrated_db(source_dir: Path, out_dir: Path) -> Path:
     else:
         df["DOI_URL"] = ""
 
+    # Normalized fields for smarter filtering
+    if "Country" in df.columns:
+        df["Country_norm"] = df["Country"].map(_norm_country)
+    if "Country(RAW)" in df.columns and "Country_norm" not in df.columns:
+        df["Country_norm"] = df["Country(RAW)"].map(_norm_country)
+
+    if "Crops" in df.columns:
+        crops_list = df["Crops"].map(_split_tokens)
+        df["Crops_list"] = crops_list
+        df["Crops_norm"] = crops_list.map(lambda xs: "; ".join([_norm_crop(x) for x in xs if _norm_crop(x)]))
+
+    # Attach compact raw extraction object per paper for the UI modal
+    if "Paper_ID" in df.columns:
+        def _raw_for_pid(pid: Any) -> dict[str, Any] | None:
+            if pd.isna(pid):
+                return None
+            try:
+                pid_int = int(pid)
+            except Exception:
+                return None
+            return raw_map.get(pid_int)
+
+        df["Raw_Extraction"] = df["Paper_ID"].map(_raw_for_pid)
+
+    if "Workflows" in df.columns:
+        wf_list = df["Workflows"].map(_extract_workflow_groups)
+        df["Workflow_Groups"] = wf_list
+        df["Workflow_Groups_str"] = wf_list.map(lambda xs: "; ".join(xs))
+
+    if "Validation-Code" in df.columns:
+        vt_list = df["Validation-Code"].map(_extract_validation_tiers)
+        df["Validation_Tier"] = vt_list
+        df["Validation_Tier_str"] = vt_list.map(lambda xs: "; ".join(xs))
+
     # Clean types for JSON
     def to_json_safe(value: Any) -> Any:
+        if isinstance(value, (list, tuple, set)):
+            return [to_json_safe(v) for v in value]
+
+        if isinstance(value, dict):
+            return {str(k): to_json_safe(v) for k, v in value.items()}
+
+        # pd.isna() is not safe on lists/arrays; keep it after iterable handling
         if pd.isna(value):
             return None
         if isinstance(value, (pd.Timestamp,)):

@@ -6,8 +6,13 @@ body {
   font-size: 0.85rem;
 }
 
-.dt-searchPanes {
-  margin-bottom: 1rem;
+.select2-container--bootstrap-5 .select2-selection {
+  min-height: 31px;
+  font-size: 0.875rem;
+}
+
+.cell-more {
+  cursor: pointer;
 }
 
 .small-muted {
