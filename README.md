@@ -19,6 +19,8 @@ The goal is to support transparency and reproducibility of the review workflow. 
 
 This repository also hosts a lightweight, reviewer-facing database website (GitHub Pages) under `docs/`.
 
+Created by Reza Khanmohammadi and Roghayeh Heidari.
+
 - The website is a searchable/filterable table built from the final curated extraction files (study-level variables, methods/workflows, data used for MZ, validation codes, and screening metadata).
 - The site does not include PDFs/full text. To reduce copyright risk, long text fields are truncated in-table with a "Show more" expansion.
 
@@ -35,7 +37,11 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
    - `docs/data/papers.json`
    - `docs/data/papers.csv`
 
- 
+### Suggested acknowledgement
+
+If you reuse the database or code, please cite the associated manuscript and acknowledge:
+"Database and web interface created by Reza Khanmohammadi and Roghayeh Heidari."
+
 ## What is included / excluded
  
 - Included:
