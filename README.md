@@ -14,6 +14,27 @@ The goal is to support transparency and reproducibility of the review workflow. 
   - The canonical inclusion/exclusion prompt template (Appendix A equivalent) and a runnable full-text screening helper.
 - `extraction_pipeline/`
   - Script used to prefill the review/extraction table from intermediate CSVs generated during screening.
+
+## Public database (GitHub Pages)
+
+This repository also hosts a lightweight, reviewer-facing database website (GitHub Pages) under `docs/`.
+
+- The website is a searchable/filterable table built from the final curated extraction files (study-level variables, methods/workflows, data used for MZ, validation codes, and screening metadata).
+- The site does not include PDFs/full text. To reduce copyright risk, long text fields are truncated in-table with a "Show more" expansion.
+
+### Updating the database when source files change
+
+1. Update the source files in your local working directory (not committed to this repo):
+   - `D:\MZ\New\XML to XLS\Final-Excels\Should be Shared\`
+2. Rebuild the integrated DB artifacts:
+   - `python tools/build_db.py`
+3. Verify locally:
+   - `python -m http.server 8010` (run from `docs/`)
+   - Open: `http://localhost:8010/`
+4. Commit and push the regenerated artifacts:
+   - `docs/data/papers.json`
+   - `docs/data/papers.csv`
+
  
 ## What is included / excluded
  
