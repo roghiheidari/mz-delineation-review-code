@@ -18,6 +18,9 @@
           <h1 class="h4 m-0">Management Zone Delineation – Review Database</h1>
           <div class="text-muted small">Interactive table for filtering and searching extracted study-level variables.</div>
         </div>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#helpModal">Help</button>
+        </div>
       </div>
 
       <hr class="my-3" />
@@ -79,6 +82,39 @@
           </div>
           <div class="modal-body">
             <pre class="m-0" id="cellModalBody" style="white-space: pre-wrap"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Help</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2">
+              This database summarizes study-level variables extracted for the review paper:
+              <em>The Evolution of Data-Driven Management Zone Delineation: A Systematic Review</em>.
+            </p>
+            <div class="mb-3">
+              <div class="fw-semibold">Workflow group (e.g., A1, D5)</div>
+              <div class="small text-muted">
+                These are workflow group codes defined in the paper (Appendix / Methods workflow taxonomy). A paper may belong to multiple workflow groups.
+                Use the filter to select papers that contain at least one selected workflow group.
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="fw-semibold">Validation tier (e.g., VAL_TIER_C)</div>
+              <div class="small text-muted">
+                Validation tiers are defined in the paper (validation taxonomy). A paper may report multiple tiers.
+              </div>
+            </div>
+            <div class="small text-muted">
+              For definitions and examples of all codes (workflow groups, validation tiers, etc.), please refer to the paper.
+            </div>
           </div>
         </div>
       </div>
