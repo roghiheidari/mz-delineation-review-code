@@ -35,6 +35,21 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
    - `docs/data/papers.json`
    - `docs/data/papers.csv`
 
+### Suggested acknowledgement
+
+"Database and web interface created by Reza Khanmohammadi, Roghayeh Heidari, and Faramarz F. Samavati."
+
+### Citation (BibTeX)
+
+```bibtex
+@misc{mzReviewDB2026,
+  title = {Management Zone Delineation -- Review Database},
+  author = {Khanmohammadi, Reza and Heidari, Roghayeh and Samavati, Faramarz F.},
+  howpublished = {\url{https://roghiheidari.github.io/mz-delineation-review-code/}},
+  year = {2026}
+}
+```
+
 ## What is included / excluded
  
 - Included:

@@ -87,38 +87,61 @@
       </div>
     </div>
 
-    <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Help</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class="mb-2">
-              This database summarizes study-level variables extracted for the review paper:
-              <em>The Evolution of Data-Driven Management Zone Delineation: A Systematic Review</em>.
-            </p>
-            <div class="mb-3">
-              <div class="fw-semibold">Workflow group (e.g., A1, D5)</div>
-              <div class="small text-muted">
-                These are workflow group codes defined in the paper (Dimension 2: Zoning Mechanism Subsection). A paper may belong to multiple workflow groups.
-                Use the filter to select papers that contain at least one selected workflow group.
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="fw-semibold">Validation tier (e.g., VAL_TIER_C)</div>
-              <div class="small text-muted">
-                Validation tiers are defined in the paper (Validation and Evaluation Approaches Subsection). A paper may report multiple tiers.
-              </div>
-            </div>
-            <div class="small text-muted">
-              For definitions and examples of all codes (workflow groups, validation tiers, etc.), please refer to the paper.
-            </div>
+   <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Help</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <p class="mb-2">
+          This database summarizes study-level variables extracted for the review paper:
+          <em>The Evolution of Data-Driven Management Zone Delineation: A Systematic Review</em>.
+        </p>
+
+        <div class="mb-3">
+          <div class="fw-semibold">Workflow group (e.g., A1, D5)</div>
+          <div class="small text-muted">
+            These are workflow group codes defined in the paper (Dimension 2: Zoning Mechanism Subsection). 
+            A paper may belong to multiple workflow groups. Use the filter to select papers that contain 
+            at least one selected workflow group.
           </div>
         </div>
-      </div>
-    </div>
+
+        <div class="mb-3">
+          <div class="fw-semibold">Validation tier (e.g., VAL_TIER_C)</div>
+          <div class="small text-muted">
+            Validation tiers are defined in the paper (Validation and Evaluation Approaches Subsection). 
+            A paper may report multiple tiers.
+          </div>
+        </div>
+
+        <div class="small text-muted mb-3">
+          For definitions and examples of all codes (workflow groups, validation tiers, etc.), 
+          please refer to the paper.
+        </div>
+
+        <hr>
+
+        <div class="mb-2 fw-semibold">How to cite this database</div>
+        <div class="small text-muted mb-2">
+          If you use this database in your research, please cite it as follows:
+        </div>
+
+	<pre><code>@misc{mzReviewDB2026,
+	  title = {Management Zone Delineation -- Review Database},
+	  author = {Khanmohammadi, Reza and Heidari, Roghayeh and Samavati, Faramarz F.},
+	  howpublished = {\url{https://roghiheidari.github.io/mz-delineation-review-code/}},
+	  year = {2026}
+	}</code></pre>
+
+		  </div>
+		</div>
+	  </div>
+	</div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

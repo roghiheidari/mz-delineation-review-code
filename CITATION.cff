@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this database or code, please cite it using the metadata below."
+title: "Management Zone Delineation -- Review Database"
+type: dataset
+authors:
+  - family-names: "Khanmohammadi"
+    given-names: "Reza"
+  - family-names: "Heidari"
+    given-names: "Roghayeh"
+  - family-names: "Samavati"
+    given-names: "Faramarz F."
+year: 2026
+url: "https://roghiheidari.github.io/mz-delineation-review-code/"
