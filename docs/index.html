@@ -87,12 +87,13 @@
       </div>
     </div>
 
-   <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 class="modal-title">Help</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <div class="modal-body">
@@ -126,22 +127,36 @@
 
         <hr>
 
-        <div class="mb-2 fw-semibold">How to cite this database</div>
-        <div class="small text-muted mb-2">
-          If you use this database in your research, please cite it as follows:
-        </div>
+        <div class="fw-semibold mb-2">How to cite this database</div>
 
-	<pre><code>@misc{mzReviewDB2026,
-	  title = {Management Zone Delineation -- Review Database},
-	  author = {Khanmohammadi, Reza and Heidari, Roghayeh and Samavati, Faramarz F.},
-	  howpublished = {\url{https://roghiheidari.github.io/mz-delineation-review-code/}},
-	  year = {2026}
-	}</code></pre>
+        <p class="small text-muted">
+          If you use this database in your research, please cite it as follows.
+          The repository is available at:
+          <a href="https://roghiheidari.github.io/mz-delineation-review-code/" target="_blank">
+          mz-delineation-review-code
+          </a>.
+        </p>
 
+        <div class="position-relative">
+
+		<button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0"
+				onclick="copyBibtex()">
+		Copy
+		</button>
+
+		<pre id="bibtexCitation" class="bg-light p-3 border rounded"><code>@misc{mzReviewDB2026,
+		  title = {Management Zone Delineation -- Review Database},
+		  author = {Khanmohammadi, Reza and Heidari, Roghayeh and Samavati, Faramarz F.},
+		  howpublished = {\url{https://roghiheidari.github.io/mz-delineation-review-code/}},
+		  year = {2026}
+		}</code></pre>
+
+				</div>
+
+			  </div>
+			</div>
 		  </div>
 		</div>
-	  </div>
-	</div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
