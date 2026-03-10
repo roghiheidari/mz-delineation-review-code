@@ -140,7 +140,7 @@
         <div class="position-relative">
 
 		<button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0"
-				onclick="copyBibtex()">
+        onclick="copyBibtex(event)">
 		Copy
 		</button>
 
@@ -158,6 +158,33 @@
 		  </div>
 		</div>
 
+<script>
+function copyBibtex() {
+  const text = document.getElementById("bibtexCitation").innerText;
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text);
+  } else {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    textarea.style.left = "-999999px";
+    textarea.style.top = "-999999px";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+  }
+
+  const btn = event.target;
+  const original = btn.innerText;
+  btn.innerText = "Copied!";
+  setTimeout(() => {
+    btn.innerText = original;
+  }, 1500);
+}
+</script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
