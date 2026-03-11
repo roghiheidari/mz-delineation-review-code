@@ -22,18 +22,6 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
 - The website is a searchable/filterable table built from the final curated extraction files (study-level variables, methods/workflows, data used for MZ, validation codes, and screening metadata).
 - The site does not include PDFs/full text. To reduce copyright risk, long text fields are truncated in-table with a "Show more" expansion.
 
-### Updating the database when source files change
-
-1. Update the source files in your local working directory (not committed to this repo):
-   - `D:\MZ\New\XML to XLS\Final-Excels\Should be Shared\`
-2. Rebuild the integrated DB artifacts:
-   - `python tools/build_db.py`
-3. Verify locally:
-   - `python -m http.server 8010` (run from `docs/`)
-   - Open: `http://localhost:8010/`
-4. Commit and push the regenerated artifacts:
-   - `docs/data/papers.json`
-   - `docs/data/papers.csv`
 
 ### Suggested acknowledgement
 
@@ -55,7 +43,7 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
 ## What is included / excluded
  
 - Included:
-  - Prompt templates.
+  - Prompt.
   - Scoring logic and full keyword lists.
   - Scripts used in the processing pipeline.
  
@@ -69,24 +57,19 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
  
 Folder: `keyword_scoring/`
  
-- `06_score_and_filter_papers.py`
+- `score_and_filter_papers.py`
   - Implements the evidence-based category scoring described in the manuscript.
   - Each category contributes its weight at most once per abstract.
   - Adds a completeness bonus when at least one methods keyword, one data keyword, and one results/validation keyword are present.
  
-- `Keywords_used_for_scoring.txt`
-  - Human-readable keyword groups and weights.
- 
-- `S2_Complete_keyword_list.txt`
-  - Complete keyword list and scoring description (Supplementary Material S2).
- 
+
 ## 2) AI-assisted screening
  
 Folder: `ai_screening/`
  
 ### Title/abstract screening prompt
  
-- `01_AI_SCREENING_PROMPTS.txt`
+- `AI_SCREENING_PROMPTS.txt`
   - Canonical inclusion/exclusion prompt template and required output format for title/abstract screening.
   - This file is the "final query" / prompt template referenced for abstract screening.
  
