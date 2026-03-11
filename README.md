@@ -42,11 +42,13 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
 ### Citation (BibTeX)
 
 ```bibtex
-@misc{mzReviewDB2026,
-  title = {Management Zone Delineation -- Review Database},
-  author = {Khanmohammadi, Reza and Heidari, Roghayeh and Samavati, Faramarz F.},
-  howpublished = {\url{https://roghiheidari.github.io/mz-delineation-review-code/}},
-  year = {2026}
+@dataset{khanmohammadi2026mzreviewdb,
+  author       = {Khanmohammadi, Reza and Heidari, Roghayeh and Samavati, Faramarz F.},
+  title        = {Management Zone Delineation Review Database},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.18945916},
+  url          = {https://doi.org/10.5281/zenodo.18945916}
 }
 ```
 
