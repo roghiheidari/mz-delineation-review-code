@@ -11,16 +11,16 @@ The goal is to support transparency and reproducibility of the review workflow. 
 - `keyword_scoring/`
   - Evidence-based keyword scoring used to prioritize Q1 abstracts for manual screening.
 - `ai_screening/`
-  - The canonical inclusion/exclusion prompt template (Appendix A equivalent) and a runnable full-text screening helper.
+  - The canonical inclusion/exclusion prompt template and a runnable full-text screening helper.
 - `extraction_pipeline/`
-  - Script used to prefill the review/extraction table from intermediate CSVs generated during screening.
+  - Script used to prefill the review/extraction table.
 
 ## Public database (GitHub Pages)
 
 This repository also hosts a lightweight, reviewer-facing database website (GitHub Pages) under `docs/`.
 
 - The website is a searchable/filterable table built from the final curated extraction files (study-level variables, methods/workflows, data used for MZ, validation codes, and screening metadata).
-- The site does not include PDFs/full text. To reduce copyright risk, long text fields are truncated in-table with a "Show more" expansion.
+- The site does not include PDFs/full text. To reduce copyright risk, long text fields are truncated in-table with a "Show more" expansion - Also, from the abstract we show only 300 first characters.
 
 
 ### Suggested acknowledgement
@@ -53,7 +53,7 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
   - Screening outputs (CSV logs) and intermediate analysis tables.
   - API keys or credentials.
  
-## 1) Keyword scoring (Q1 abstracts)
+## 1) Keyword scoring (From Q1 papers abstracts)
  
 Folder: `keyword_scoring/`
  
@@ -93,13 +93,6 @@ From the repository root:
 python -m ai_screening.fulltext_screening
 ```
  
-By default this expects the following folder structure under `temp_vector_pipeline/`:
- 
-- `temp_vector_pipeline/full_text/` (input `.txt` files)
-- `temp_vector_pipeline/analysis/` (output CSV)
- 
-You can change this by editing `ai_screening/config.py`.
- 
 ## 3) Extraction pipeline / review table prefill
  
 Folder: `extraction_pipeline/`
@@ -109,5 +102,3 @@ Folder: `extraction_pipeline/`
 
 - `xml_extraction_rules_prompt.md`
   - Rules and structured XML output format used for study-level extraction.
- 
-Note: This script is intentionally "project glue code" and expects intermediate CSVs produced during the review workflow. The input/output files are not included in this repository.
