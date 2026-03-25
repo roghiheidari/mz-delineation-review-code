@@ -21,7 +21,7 @@ This repository also hosts a lightweight, reviewer-facing database website (GitH
 
 - The website is a searchable/filterable table built from the final curated extraction files (study-level variables, methods/workflows, data used for MZ, validation codes, and screening metadata).
 - The site does not include PDFs/full text. To reduce copyright risk, long text fields are truncated in-table with a "Show more" expansion - Also, from the abstract we show only 300 first characters.
-
+- Access the project page: [https://roghiheidari.github.io/mz-delineation-review-code/](https://roghiheidari.github.io/mz-delineation-review-code/)
 
 ### Suggested acknowledgement
 
