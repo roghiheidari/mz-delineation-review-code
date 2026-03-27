@@ -187,9 +187,9 @@ For each paper:
    - If has methods AND data AND results keywords
    - Add bonus: +5 points
 
-4. Final score range: -5 to 38 points
+4. Final score range: -5 to 21 points
    - Minimum: -5 (only exclusion keywords)
-   - Maximum: 38 (all categories + bonus)
+   - Maximum: 21 (all categories + bonus)
 
 5. Papers ranked by score (highest to lowest)
 
@@ -257,7 +257,7 @@ Top 300 Selection:
 
 Validation Check:
 -----------------
-- 50 papers randomly sampled from excluded set (ranks 201-1,038)
+- 50 papers randomly sampled from excluded set (ranks 301-1,038)
 - Manual review found that relevant papers have already been selected
 
 
