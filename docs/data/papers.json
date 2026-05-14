@@ -2255,7 +2255,7 @@
     "Sub-Methods-Internal": "Peak Green selection (closest image to RIP, using Euclidean distance); Normal distribution binning thresholds (for zoning); ZDM calculation (using absolute difference and area normalization); One-sigma rule (for ZDM threshold, 0.040); Coefficient of Variation (CV) threshold (42); Data transformation (natural logarithm)",
     "Zones": "k bins (k represents the number of zones, e.g., k=5 or k=7); Zoning results assign labels from 1 to k (Zone 1 is less performance, Zone 6 is best performance)",
     "ManagementFocus": "Anomaly detection in historical performance data for zoning; Delineate management zones precisely by excluding abnormal data; Enhance the accuracy of delineated zones; Improve fertility and resource management",
-    "Crops": "Not explicitly specified; Study conducted on commercial agricultural fields experiencing a single growing season annually.",
+    "Crops": "Not explicitly specified; ",
     "Validation": "Comparison of detected abnormal years with historical drought records; Testing detection capability using synthetically perturbed data",
     "Notes": "This paper introduces a framework incorporating historical performance data and a new Zoning Dissimilarity Metric (ZDM) to detect abnormal zoning data automatically. Identifying and excluding abnormal data enhance the precision of zone labels assigned to each pixel, improving fertility and resource management.",
     "Score": 21,
@@ -2313,10 +2313,9 @@
     "DOI_URL": "https://doi.org/10.3390/agriculture14050688",
     "Country_norm": "Canada",
     "Crops_list": [
-      "Not explicitly specified",
-      "Study conducted on commercial agricultural fields experiencing a single growing season annually."
+      "Not explicitly specified"
     ],
-    "Crops_norm": "Not explicitly specified; Study conducted on commercial agricultural fields experiencing a single growing season annually.",
+    "Crops_norm": "Not explicitly specified",
     "Raw_Extraction": {
       "BibTeX_ID": "heidariNewDissimilarityMetric2024",
       "Title": "A New Dissimilarity Metric for Anomaly Detection in Management Zones Delineation Constructed from Time-Varying Satellite Images",
@@ -2334,7 +2333,7 @@
       "Sub-Methods-Internal": "Peak Green selection (closest image to RIP, using Euclidean distance); Normal distribution binning thresholds (for zoning); ZDM calculation (using absolute difference and area normalization); One-sigma rule (for ZDM threshold, 0.040); Coefficient of Variation (CV) threshold (42); Data transformation (natural logarithm)",
       "Zones": "k bins (k represents the number of zones, e.g., k=5 or k=7); Zoning results assign labels from 1 to k (Zone 1 is less performance, Zone 6 is best performance)",
       "ManagementFocus": "Anomaly detection in historical performance data for zoning; Delineate management zones precisely by excluding abnormal data; Enhance the accuracy of delineated zones; Improve fertility and resource management",
-      "Crops": "Not explicitly specified; Study conducted on commercial agricultural fields experiencing a single growing season annually.",
+      "Crops": "Not explicitly specified; ",
       "Validation": "Comparison of detected abnormal years with historical drought records; Testing detection capability using synthetically perturbed data",
       "Notes": "This paper introduces a framework incorporating historical performance data and a new Zoning Dissimilarity Metric (ZDM) to detect abnormal zoning data automatically. Identifying and excluding abnormal data enhance the precision of zone labels assigned to each pixel, improving fertility and resource management."
     },
@@ -2807,7 +2806,7 @@
     "Sub-Methods-Internal": "F-index thresholding (based on area following a normal distribution); Discrete Global Grid System (DGGS) (for data integration); Distance Transform operator; Complete Search method (on DGGS cells); K-means clustering (mentioned in context of similar studies)",
     "Zones": "Management Zones (MZs); Number of MZs varied from 4 to 6 for the fields evaluated",
     "ManagementFocus": "Automate the selection of optimal locations for benchmark soil sampling sites; Minimize the cost of soil testing; Track the trend of soil nutrient changes; Implement site-specific crop management",
-    "Crops": "None explicitly specified; Study conducted on commercial agricultural fields in Canada",
+    "Crops": "Not explicitly specified;",
     "Validation": "Comparison of objective function values at selected sites against the mean values of the entire zone (simulating composite sampling); Assessment of algorithm execution time",
     "Notes": "The introduced algorithmic framework determines optimal benchmark sites using four objectives (close to median F-index, away from MZ boundaries, close to anchor points, and flatter regions) and two constraints (avoiding certain regions/headlands and proximity of other benchmark sites). The automatic process is significantly faster than conventional GIS methods, taking only 9 to 23 seconds for the tested fields, compared to multiple days manually. The selected benchmark sites consistently showed objectives superior to the mean of all cells in the respective management zones.",
     "Score": 21,
@@ -2866,10 +2865,9 @@
     "DOI_URL": "https://doi.org/10.3390/agriculture13101993",
     "Country_norm": "Canada",
     "Crops_list": [
-      "None explicitly specified",
-      "Study conducted on commercial agricultural fields in Canada"
+      "Not explicitly specified"
     ],
-    "Crops_norm": "None explicitly specified; Study conducted on commercial agricultural fields in canada",
+    "Crops_norm": "Not explicitly specified",
     "Raw_Extraction": {
       "BibTeX_ID": "kazemiAutomaticSoilSampling2023",
       "Title": "Automatic Soil Sampling Site Selection in Management Zones Using a Multi-Objective Optimization Algorithm",
@@ -2887,7 +2885,7 @@
       "Sub-Methods-Internal": "F-index thresholding (based on area following a normal distribution); Discrete Global Grid System (DGGS) (for data integration); Distance Transform operator; Complete Search method (on DGGS cells); K-means clustering (mentioned in context of similar studies)",
       "Zones": "Management Zones (MZs); Number of MZs varied from 4 to 6 for the fields evaluated",
       "ManagementFocus": "Automate the selection of optimal locations for benchmark soil sampling sites; Minimize the cost of soil testing; Track the trend of soil nutrient changes; Implement site-specific crop management",
-      "Crops": "None explicitly specified; Study conducted on commercial agricultural fields in Canada",
+      "Crops": "Not explicitly specified;",
       "Validation": "Comparison of objective function values at selected sites against the mean values of the entire zone (simulating composite sampling); Assessment of algorithm execution time",
       "Notes": "The introduced algorithmic framework determines optimal benchmark sites using four objectives (close to median F-index, away from MZ boundaries, close to anchor points, and flatter regions) and two constraints (avoiding certain regions/headlands and proximity of other benchmark sites). The automatic process is significantly faster than conventional GIS methods, taking only 9 to 23 seconds for the tested fields, compared to multiple days manually. The selected benchmark sites consistently showed objectives superior to the mean of all cells in the respective management zones."
     },
@@ -3139,7 +3137,7 @@
     "Sub-Methods-Internal": "X-means clustering algorithm (hierarchical variant of k-means, estimates optimal number of clusters); Kriging algorithm (for attributes with low sampling density); Inverse Distance Weighting (IDW) (for attributes with high sample density); Linear correlation (R); Random Forest algorithm (for feature selection, using %IncMSE and IncNodePurity); Standardization (-1, 1 interval for yield maps); Histogram analysis (for outlier removal).",
     "Zones": "Number of MZs varied by plot and procedure (e.g., Plot A: 2 to 4 MZs; Plot B: 2 to 4 MZs; Plot C: 2 to 3 MZs; Plot D: 2 MZs).",
     "ManagementFocus": "Enable spatially differentiated management using precision agriculture tools; Delineate Management Zones (MZs) with varying yield potentials; Improve management of inputs; Provide greater profit to the farmer; Assess the effectiveness of VIs as substitutes for field data in MZ delineation.",
-    "Crops": "Soybean (summer crop); Corn (winter crop, Plot D); Cotton (second crop/winter, Plots A, B, C).",
+    "Crops": "Soybean ; Corn ; Cotton",
     "Validation": "Yield Variance Reduction (VR) index; Comparison of average normalized yield between zones",
     "Notes": "Four procedures were evaluated for MZ delineation: (I) Field attributes (soil, elevation, yield) + peak-biomass VIs; (II) Soil attributes + well-correlated VIs; (III) VIs replacing all field data via correlation (R); (IV) VIs selected by Random Forest variable importance. For plots with easily identified natural spatial variability (A and B), all procedures generally favored obtaining MZ maps that allowed **reductions of 40% to 70% in yield variance**. In plots with low natural spatial variability and/or unreliable yield maps (Plot C), the different input data sets did not help in obtaining feasible MZ maps, showing minimal yield VR (around 1%). The exclusive use of VIs can effectively replace other types of data, but should be used with reservations in areas where spatially differentiated anthropogenic activities are present or when VIs are consolidated over extended periods in plots with substantial topographical variability (Plot D). The X-means algorithm was chosen for clustering because, unlike k-means, it can estimate the optimal number of clusters based on statistical criteria.",
     "Score": 21,
@@ -3201,15 +3199,11 @@
     "DOI_URL": "https://doi.org/10.3390/agriengineering5030092",
     "Country_norm": "Brazil",
     "Crops_list": [
-      "Soybean (summer crop)",
-      "Corn (winter crop",
-      "Plot D)",
-      "Cotton (second crop/winter",
-      "Plots A",
-      "B",
-      "C)."
+      "Soybean",
+      "Corn",
+      "Cotton"
     ],
-    "Crops_norm": "Soybean; Corn; Cotton; B",
+    "Crops_norm": "Soybean; Corn; Cotton",
     "Raw_Extraction": {
       "BibTeX_ID": "speranzaDelineatingManagementZones2023",
       "Title": "Delineating Management Zones with Different Yield Potentials in Soybeanâ€“Corn and Soybeanâ€“Cotton Production Systems",
@@ -3227,7 +3221,7 @@
       "Sub-Methods-Internal": "X-means clustering algorithm (hierarchical variant of k-means, estimates optimal number of clusters); Kriging algorithm (for attributes with low sampling density); Inverse Distance Weighting (IDW) (for attributes with high sample density); Linear correlation (R); Random Forest algorithm (for feature selection, using %IncMSE and IncNodePurity); Standardization (-1, 1 interval for yield maps); Histogram analysis (for outlier removal).",
       "Zones": "Number of MZs varied by plot and procedure (e.g., Plot A: 2 to 4 MZs; Plot B: 2 to 4 MZs; Plot C: 2 to 3 MZs; Plot D: 2 MZs).",
       "ManagementFocus": "Enable spatially differentiated management using precision agriculture tools; Delineate Management Zones (MZs) with varying yield potentials; Improve management of inputs; Provide greater profit to the farmer; Assess the effectiveness of VIs as substitutes for field data in MZ delineation.",
-      "Crops": "Soybean (summer crop); Corn (winter crop, Plot D); Cotton (second crop/winter, Plots A, B, C).",
+      "Crops": "Soybean ; Corn ; Cotton",
       "Validation": "Yield Variance Reduction (VR) index; Comparison of average normalized yield between zones",
       "Notes": "Four procedures were evaluated for MZ delineation: (I) Field attributes (soil, elevation, yield) + peak-biomass VIs; (II) Soil attributes + well-correlated VIs; (III) VIs replacing all field data via correlation (R); (IV) VIs selected by Random Forest variable importance. For plots with easily identified natural spatial variability (A and B), all procedures generally favored obtaining MZ maps that allowed **reductions of 40% to 70% in yield variance**. In plots with low natural spatial variability and/or unreliable yield maps (Plot C), the different input data sets did not help in obtaining feasible MZ maps, showing minimal yield VR (around 1%). The exclusive use of VIs can effectively replace other types of data, but should be used with reservations in areas where spatially differentiated anthropogenic activities are present or when VIs are consolidated over extended periods in plots with substantial topographical variability (Plot D). The X-means algorithm was chosen for clustering because, unlike k-means, it can estimate the optimal number of clusters based on statistical criteria."
     },
@@ -6250,7 +6244,7 @@
     "Sub-Methods-Internal": "Shapiro-Wilk test; Kaiser criterion; Semivariograms (Spherical, Exponential); Cross-validation (MSE, RMSSE); Fuzzy Performance Index (FPI); Modified Partition Entropy (MPE); Kappa index",
     "Zones": "3 to 6 zones (optimized per Principal Component)",
     "ManagementFocus": "Soil fertility management; Multivariate analysis for zoning",
-    "Crops": "Not specified (general agricultural cropping system)",
+    "Crops": "Not explicitly specified;",
     "Validation": "Kappa index to evaluate agreement between multivariate (PCA-based) MZs and univariate (attribute-based) MZs; Cross-validation statistics (MSE, RMSSE) for interpolation models",
     "Notes": "PCA reduced 14 attributes to 5 components explaining 64.35% of variance; No complete agreement found between univariate and multivariate zones; PC1 zones showed agreement with Iron, Manganese, and EC zones",
     "Score": 21,
@@ -6308,9 +6302,9 @@
     "DOI_URL": "https://doi.org/10.15361/1984-5529.2020V48N1P25-35",
     "Country_norm": "Brazil",
     "Crops_list": [
-      "Not specified (general agricultural cropping system)"
+      "Not explicitly specified"
     ],
-    "Crops_norm": "Not specified",
+    "Crops_norm": "Not explicitly specified",
     "Raw_Extraction": {
       "BibTeX_ID": "maquinaUsingMultivariateAnalysis2020",
       "Title": "Using multivariate analysis to design management zones",
@@ -6328,7 +6322,7 @@
       "Sub-Methods-Internal": "Shapiro-Wilk test; Kaiser criterion; Semivariograms (Spherical, Exponential); Cross-validation (MSE, RMSSE); Fuzzy Performance Index (FPI); Modified Partition Entropy (MPE); Kappa index",
       "Zones": "3 to 6 zones (optimized per Principal Component)",
       "ManagementFocus": "Soil fertility management; Multivariate analysis for zoning",
-      "Crops": "Not specified (general agricultural cropping system)",
+      "Crops": "Not explicitly specified;",
       "Validation": "Kappa index to evaluate agreement between multivariate (PCA-based) MZs and univariate (attribute-based) MZs; Cross-validation statistics (MSE, RMSSE) for interpolation models",
       "Notes": "PCA reduced 14 attributes to 5 components explaining 64.35% of variance; No complete agreement found between univariate and multivariate zones; PC1 zones showed agreement with Iron, Manganese, and EC zones"
     },
@@ -10363,7 +10357,7 @@
     "Sub-Methods-Internal": "Block Kriging; Leave-one-out cross validation; Ratio of Performance to Deviation (RPD); Root Mean Squared Error (RMSE); Fuzziness Performance Index (FPI); Normalized Classification Entropy (NCE); Savitzky-Golay filter; FLAASH atmospheric correction",
     "Zones": "6 classes",
     "ManagementFocus": "Variable rate irrigation (VRI); Site-specific water management; Reducing deep percolation losses",
-    "Crops": "Not specified (CropWat simulation)",
+    "Crops": "Not explicitly specified;",
     "Validation": "Statistical metrics (RMSE, RPD) for soil property estimation; Simulation comparing Uniform Irrigation (UNI) vs Variable Rate Irrigation based on PLSR estimates (VRI-PLSR)",
     "Notes": "Hyperspectral data estimated clay and sand with intermediate accuracy (RPD > 1.4) but failed for SOM; Variable rate irrigation based on satellite estimates significantly reduced water losses compared to uniform management; Benefit of VRI was greater in the field with higher soil spatial variability",
     "Score": 21,
@@ -10422,9 +10416,9 @@
     "DOI_URL": "https://doi.org/10.4081/ija.2012.e43",
     "Country_norm": "Italy",
     "Crops_list": [
-      "Not specified (CropWat simulation)"
+      "Not explicitly specified"
     ],
-    "Crops_norm": "Not specified",
+    "Crops_norm": "Not explicitly specified",
     "Raw_Extraction": {
       "BibTeX_ID": "casaPotentialHyperspectralRemote2012",
       "Title": "Potential of hyperspectral remote sensing for field scale soil mapping and precision agriculture applications",
@@ -10442,7 +10436,7 @@
       "Sub-Methods-Internal": "Block Kriging; Leave-one-out cross validation; Ratio of Performance to Deviation (RPD); Root Mean Squared Error (RMSE); Fuzziness Performance Index (FPI); Normalized Classification Entropy (NCE); Savitzky-Golay filter; FLAASH atmospheric correction",
       "Zones": "6 classes",
       "ManagementFocus": "Variable rate irrigation (VRI); Site-specific water management; Reducing deep percolation losses",
-      "Crops": "Not specified (CropWat simulation)",
+      "Crops": "Not explicitly specified;",
       "Validation": "Statistical metrics (RMSE, RPD) for soil property estimation; Simulation comparing Uniform Irrigation (UNI) vs Variable Rate Irrigation based on PLSR estimates (VRI-PLSR)",
       "Notes": "Hyperspectral data estimated clay and sand with intermediate accuracy (RPD > 1.4) but failed for SOM; Variable rate irrigation based on satellite estimates significantly reduced water losses compared to uniform management; Benefit of VRI was greater in the field with higher soil spatial variability"
     },
@@ -12710,7 +12704,7 @@
     "Sub-Methods-Internal": "Disjoint Set Union algorithm (decoder); Reactive penalized fitness function; Relative variance; Bernoulli discrete distribution; Wilcoxon signed-rank test; Effect Size",
     "Zones": "Optimized minimum number based on homogeneity thresholds (alpha 0.5, 0.7, 0.9); Range 2 to 17 for real field",
     "ManagementFocus": "Delineation of orthogonal-shaped management zones practical for machinery; Computational efficiency for large instances",
-    "Crops": "Not specified",
+    "Crops": "Not explicitly specified;",
     "Validation": "Statistical comparison (Wilcoxon test) of algorithm performance (solution quality, time) against literature methods (EDA-SSMZ, Greedy A2)",
     "Notes": "Proposed algorithm generates orthogonal (rectangular/square) zones suitable for machinery; New reactive fitness function and disjoint set decoder significantly improved computational speed and solution quality on large instances compared to previous methods; Tested on real and simulated datasets",
     "Score": 21,
@@ -12768,9 +12762,9 @@
     "DOI_URL": "https://doi.org/10.1007/s11119-024-10196-z",
     "Country_norm": "Chile",
     "Crops_list": [
-      "Not specified"
+      "Not explicitly specified"
     ],
-    "Crops_norm": "Not specified",
+    "Crops_norm": "Not explicitly specified",
     "Raw_Extraction": {
       "BibTeX_ID": "vicencio-medinaBioinspiredOptimizationAlgorithm2025",
       "Title": "A bio-inspired optimization algorithm with disjoint sets to delineate orthogonal site-specific management zones",
@@ -12788,7 +12782,7 @@
       "Sub-Methods-Internal": "Disjoint Set Union algorithm (decoder); Reactive penalized fitness function; Relative variance; Bernoulli discrete distribution; Wilcoxon signed-rank test; Effect Size",
       "Zones": "Optimized minimum number based on homogeneity thresholds (alpha 0.5, 0.7, 0.9); Range 2 to 17 for real field",
       "ManagementFocus": "Delineation of orthogonal-shaped management zones practical for machinery; Computational efficiency for large instances",
-      "Crops": "Not specified",
+      "Crops": "Not explicitly specified;",
       "Validation": "Statistical comparison (Wilcoxon test) of algorithm performance (solution quality, time) against literature methods (EDA-SSMZ, Greedy A2)",
       "Notes": "Proposed algorithm generates orthogonal (rectangular/square) zones suitable for machinery; New reactive fitness function and disjoint set decoder significantly improved computational speed and solution quality on large instances compared to previous methods; Tested on real and simulated datasets"
     },
