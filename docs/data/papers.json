@@ -917,7 +917,7 @@
     "Sub-Methods-Internal": "Speckle Filter; Speckle Filter Framework; Autoencoder (32–6–32 architecture, ReLU, Adam, 200 epochs); Refinement based on Area;",
     "Zones": "4 and 5",
     "ManagementFocus": "Soil attribute mapping; Cost-efficient soil sampling; Remote MZ delineation;",
-    "Crops": "grain production systems",
+    "Crops": "grain ",
     "Validation": "Comparison of RMSE for soil attribute estimation against uniform grid, conventional, and random cell sampling methods using LOOCV; ANOVA comparing soil attributes between zones",
     "Notes": "The Management Zones (MZs) delineated using the VV/VH index based on autoencoders outperformed the CONV method, the random cell-based soil sampling method (CEL-RND), and, in many cases, the rectangular cell-based soil sampling method (CEL). These findings encouraging and indicate the potential of SAR data in analyzing soil variability and defining MZs.",
     "Score": 21,
@@ -975,9 +975,9 @@
     "DOI_URL": "https://doi.org/10.3390/agriengineering7050150",
     "Country_norm": "Brazil",
     "Crops_list": [
-      "grain production systems"
+      "grain"
     ],
-    "Crops_norm": "Grain production systems",
+    "Crops_norm": "Grain",
     "Raw_Extraction": {
       "BibTeX_ID": "goncalvesUsingSentinel1Time2025",
       "Title": "Using Sentinel-1 Time Series Data for the Delineation of Management Zones",
@@ -995,7 +995,7 @@
       "Sub-Methods-Internal": "Speckle Filter; Speckle Filter Framework; Autoencoder (32–6–32 architecture, ReLU, Adam, 200 epochs); Refinement based on Area;",
       "Zones": "4 and 5",
       "ManagementFocus": "Soil attribute mapping; Cost-efficient soil sampling; Remote MZ delineation;",
-      "Crops": "grain production systems",
+      "Crops": "grain ",
       "Validation": "Comparison of RMSE for soil attribute estimation against uniform grid, conventional, and random cell sampling methods using LOOCV; ANOVA comparing soil attributes between zones",
       "Notes": "The Management Zones (MZs) delineated using the VV/VH index based on autoencoders outperformed the CONV method, the random cell-based soil sampling method (CEL-RND), and, in many cases, the rectangular cell-based soil sampling method (CEL). These findings encouraging and indicate the potential of SAR data in analyzing soil variability and defining MZs."
     },
@@ -4469,7 +4469,7 @@
     "Sub-Methods-Internal": "Sliding window filtering (5x5); Elbow method; Global Moran's I; Kappa coefficient; Python (Gdal, Sklearn)",
     "Zones": "Optimum 4 zones for majority (37%) of fields",
     "ManagementFocus": "Variable rate application (irrigation, fertilizer, pesticide)",
-    "Crops": "Various crops, fruits, and vegetables",
+    "Crops": "Various crops, fruits,  vegetables",
     "Validation": "Comparison of Landsat-8 MZs against high-resolution PlanetScope MZs (overlap percentage, variance explained); Temporal stability assessment using Kappa coefficient across multiple dates",
     "Notes": "Developed SAMZ-Desert tool; 13% of fields in Imperial Valley were strongly spatially clustered and suitable for VRA; dynamic zoning recommended due to low temporal stability; Landsat-8 found comparable to PlanetScope for zoning",
     "Score": 21,
@@ -4529,9 +4529,9 @@
     "Crops_list": [
       "Various crops",
       "fruits",
-      "and vegetables"
+      "vegetables"
     ],
-    "Crops_norm": "Various crops; Fruits; And vegetables",
+    "Crops_norm": "Various crops; Fruits; Vegetables",
     "Raw_Extraction": {
       "BibTeX_ID": "gargSAMZDesertSatellitebasedAgricultural2022",
       "Title": "SAMZ-Desert: A Satellite-based agricultural management zoning tool for the desert agriculture region of southern California",
@@ -4549,7 +4549,7 @@
       "Sub-Methods-Internal": "Sliding window filtering (5x5); Elbow method; Global Moran's I; Kappa coefficient; Python (Gdal, Sklearn)",
       "Zones": "Optimum 4 zones for majority (37%) of fields",
       "ManagementFocus": "Variable rate application (irrigation, fertilizer, pesticide)",
-      "Crops": "Various crops, fruits, and vegetables",
+      "Crops": "Various crops, fruits,  vegetables",
       "Validation": "Comparison of Landsat-8 MZs against high-resolution PlanetScope MZs (overlap percentage, variance explained); Temporal stability assessment using Kappa coefficient across multiple dates",
       "Notes": "Developed SAMZ-Desert tool; 13% of fields in Imperial Valley were strongly spatially clustered and suitable for VRA; dynamic zoning recommended due to low temporal stability; Landsat-8 found comparable to PlanetScope for zoning"
     },
